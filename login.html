@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ล็อกอิน</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .login-container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>เข้าสู่ระบบ</h2>
+        <input type="text" id="username" placeholder="ชื่อ(ไม่ต้องใส่นามสกุล)">
+        <input type="password" id="password" placeholder="รหัสนักเรียน">
+        <button onclick="login()">ล็อกอินสิจั๊ฟ</button>
+        <p id="message" style="color: rgb(236, 120, 120);"></p>
+    </div>
+
+    <script>
+        const validUsers = {
+            "กลทีบ์": "15685",
+            "กันต์กวี": "15686",
+            "เจษฎา": "15687",
+            "ชัยวัฒน์": "15688",
+            "โชคชัย": "15689",
+            "พัณณ์พิสิฐ": "15690",
+            "ยศกร": "15691",
+            "รุ่งโรจน์": "15692",
+            "ต้นน้ำ": "15693",
+            "เบส": "15694",
+            "อนุภัทร": "15695",
+            "จันทร์สุดา": "15696",
+            "จุฑามาศ": "15697",
+            "ญาณาธิป": "15699",
+            "ฑิฆัมพร": "15700",
+            "ณัชชาวรรณ": "15701",
+            "อิม": "15702",
+            "ณัฐณิชา": "15703",
+            "พกาวรรณ": "15705",
+            "ปริญดา": "15704",
+            "พนิตนันท์": "15706",
+            "พิมพ์ญาดา": "15708",
+            "พิมพ์ลภัส": "15709",
+            "จันทร์เจ้า": "15710",
+            "รินดา": "15711",
+            "แพน": "15713",
+            "จิราภัทร": "15887",
+            "ศรีสุดา": "15712",
+            "อัจฉรานันท์": "15715",
+            "ไอริณ": "15716",
+            "พิมพ์นภา": "16144",
+            "สิริธาร": "16145",
+            "1": "1"
+        };
+
+        function login() {
+            var user = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+            if (validUsers[user] && validUsers[user] === pass) {
+                alert("เข้าสู่ระบบสำเร็จ!");
+                window.location.href = "thankyou.html"; // เปลี่ยนเส้นทางไปหน้า thankyou.html
+            } else {
+                document.getElementById('message').innerText = "รหัสผิดไอโง่";
+            }
+        }
+    </script>
+</body>
+</html>
+
